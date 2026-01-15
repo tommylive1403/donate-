@@ -107,39 +107,48 @@ user_problem_statement: "Благодійний лендінг для збору
 backend:
   - task: "GET /api/fundraising - отримання даних збору"
     implemented: true
-    working: "NA"
+    working: true
     file: "backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented GET endpoint to fetch fundraising data from MongoDB. Returns totalRaised, goalAmount, donorCount, monobank details, crypto, and social links"
+      - working: true
+        agent: "testing"
+        comment: "✅ GET /api/fundraising endpoint tested successfully. Returns correct data structure with all required fields (totalRaised, goalAmount, donorCount, monobank, crypto, social). API responds with 200 status and proper JSON format. Data persistence verified."
 
   - task: "PUT /api/fundraising - оновлення даних збору (admin)"
     implemented: true
-    working: "NA"
+    working: true
     file: "backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented PUT endpoint with admin password authentication. Updates all fundraising data in MongoDB. Password stored in ADMIN_PASSWORD env var (currently: admin123)"
+      - working: true
+        agent: "testing"
+        comment: "✅ PUT /api/fundraising endpoint tested successfully. Correctly accepts updates with valid admin password (admin123) and returns 200 with success message. Properly rejects invalid passwords with 401 status. Data updates persist correctly in MongoDB."
 
   - task: "Database initialization with default data"
     implemented: true
-    working: "NA"
+    working: true
     file: "backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Startup event handler initializes MongoDB with default Ukrainian fundraising data if collection is empty"
+      - working: true
+        agent: "testing"
+        comment: "✅ Database initialization verified. MongoDB properly initialized with default data on startup. Backend logs confirm 'Initialized default fundraising data' message. Default structure includes all required fields with proper Ukrainian fundraising data."
 
 frontend:
   - task: "Home page with API integration"
