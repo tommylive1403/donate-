@@ -101,3 +101,107 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Благодійний лендінг для збору коштів з адмін-панеллю для оновлення даних"
+
+backend:
+  - task: "GET /api/fundraising - отримання даних збору"
+    implemented: true
+    working: "NA"
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Implemented GET endpoint to fetch fundraising data from MongoDB. Returns totalRaised, goalAmount, donorCount, monobank details, crypto, and social links"
+
+  - task: "PUT /api/fundraising - оновлення даних збору (admin)"
+    implemented: true
+    working: "NA"
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Implemented PUT endpoint with admin password authentication. Updates all fundraising data in MongoDB. Password stored in ADMIN_PASSWORD env var (currently: admin123)"
+
+  - task: "Database initialization with default data"
+    implemented: true
+    working: "NA"
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Startup event handler initializes MongoDB with default Ukrainian fundraising data if collection is empty"
+
+frontend:
+  - task: "Home page with API integration"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/pages/Home.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Updated Home.jsx to fetch data from /api/fundraising endpoint. Removed mock data dependency. Added loading and error states"
+
+  - task: "Admin panel for data management"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/pages/Admin.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Created Admin.jsx with form to update all fundraising data. Includes password authentication, success/error messaging, and navigation. Route added at /admin"
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "GET /api/fundraising - отримання даних збору"
+    - "PUT /api/fundraising - оновлення даних збору (admin)"
+    - "Database initialization with default data"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: |
+      Implemented complete fundraising management system:
+      
+      Backend:
+      - GET /api/fundraising (public) - returns current fundraising data
+      - PUT /api/fundraising (admin) - updates data with password protection
+      - MongoDB initialization with default data on startup
+      - Admin password: admin123 (stored in backend/.env as ADMIN_PASSWORD)
+      
+      Frontend:
+      - Home page fetches data from API
+      - Admin panel at /admin allows updating all data
+      - Dark blue/cyan modern military design implemented
+      
+      Testing priorities:
+      1. Test GET endpoint returns correct data structure
+      2. Test PUT endpoint with correct password (admin123)
+      3. Test PUT endpoint rejects invalid password
+      4. Test that frontend displays API data correctly
+      5. Optional: Test admin form submission
+      
+      Note: Database should be initialized with default data (₴125,000 of ₴500,000, 347 donors)
