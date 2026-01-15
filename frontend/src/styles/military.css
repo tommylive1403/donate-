@@ -1,28 +1,28 @@
 /* UAF Sans Font */
 @font-face {
   font-family: 'UAF Sans';
-  src: url('%PUBLIC_URL%/fonts/UAFSans-Regular.ttf') format('truetype');
+  src: url('../fonts/UAFSans-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'UAF Sans';
-  src: url('%PUBLIC_URL%/fonts/UAFSans-Medium.ttf') format('truetype');
+  src: url('../fonts/UAFSans-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'UAF Sans';
-  src: url('%PUBLIC_URL%/fonts/UAFSans-SemiBold.ttf') format('truetype');
+  src: url('../fonts/UAFSans-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'UAF Sans';
-  src: url('%PUBLIC_URL%/fonts/UAFSans-Bold.ttf') format('truetype');
+  src: url('../fonts/UAFSans-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
