@@ -692,7 +692,8 @@ body {
     font-size: 2rem;
   }
   
-  .inline-icon {
+  .inline-icon,
+  .marine-anchor-icon {
     width: 2rem;
     height: 2rem;
   }
@@ -707,7 +708,7 @@ body {
   
   .unit-logo,
   .unit-badge {
-    height: 80px;
+    height: 100px;
   }
   
   .logo-container {
@@ -720,5 +721,10 @@ body {
   
   .progress-card {
     padding: 1.5rem;
+  }
+
+  .bank-link-button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
   }
 }
