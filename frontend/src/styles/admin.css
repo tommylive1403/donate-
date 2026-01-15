@@ -55,7 +55,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'UAF Sans', sans-serif;
 }
 
 .back-button:hover {
