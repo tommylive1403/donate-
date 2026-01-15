@@ -1,13 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { Target, Heart, Share2 } from 'lucide-react';
+import { Target, Heart, Share2, Loader2 } from 'lucide-react';
 import QRCode from 'react-qr-code';
-import { mockDonationData } from '../mockData';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 export const Home = () => {
-  const [data, setData] = useState(mockDonationData);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [copiedField, setCopiedField] = useState(null);
 
-  const progressPercent = (data.totalRaised / data.goalAmount) * 100;
+  useEffect(() => {
+    fetchFundraisingData();
+  }, []);
+
+  const fetchFundraisingData = async () => {
+    try {
+      const response = await axios.get(`${API}/fundraising`);
+      setData(response.data);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching fundraising data:', error);
+      setLoading(false);
+    }
+  };
 
   const copyToClipboard = (text, field) => {
     navigator.clipboard.writeText(text);
@@ -18,6 +35,25 @@ export const Home = () => {
   const formatAmount = (amount) => {
     return new Intl.NumberFormat('uk-UA').format(amount);
   };
+
+  if (loading) {
+    return (
+      <div className="military-landing loading-screen">
+        <Loader2 className="loading-spinner" />
+        <p>Завантаження...</p>
+      </div>
+    );
+  }
+
+  if (!data) {
+    return (
+      <div className="military-landing error-screen">
+        <p>Помилка завантаження даних</p>
+      </div>
+    );
+  }
+
+  const progressPercent = (data.totalRaised / data.goalAmount) * 100;
 
   return (
     <div className="military-landing">
