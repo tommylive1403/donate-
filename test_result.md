@@ -183,9 +183,8 @@ metadata:
 
 test_plan:
   current_focus:
-    - "GET /api/fundraising - отримання даних збору"
-    - "PUT /api/fundraising - оновлення даних збору (admin)"
-    - "Database initialization with default data"
+    - "Home page with API integration"
+    - "Admin panel for data management"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
