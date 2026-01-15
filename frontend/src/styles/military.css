@@ -278,9 +278,9 @@ body {
 .amount-value {
   font-size: 4rem;
   font-weight: 700;
-  color: var(--ua-yellow);
-  font-family: 'Roboto Mono', monospace;
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  color: var(--accent-cyan);
+  font-family: 'Orbitron', monospace;
+  text-shadow: 0 0 20px rgba(0, 180, 216, 0.6);
 }
 
 .currency {
