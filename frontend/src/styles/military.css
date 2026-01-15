@@ -220,6 +220,19 @@ body {
   filter: drop-shadow(0 0 10px var(--accent-cyan));
 }
 
+.marine-anchor-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  color: var(--accent-cyan);
+  filter: drop-shadow(0 0 15px var(--accent-cyan));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
 .hero-subtitle {
   font-size: 1.4rem;
   color: var(--text-muted);
