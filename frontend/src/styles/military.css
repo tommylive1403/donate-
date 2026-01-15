@@ -102,7 +102,7 @@ body {
   position: relative;
   z-index: 10;
   padding: 2rem 1rem;
-  background: linear-gradient(180deg, rgba(26, 31, 22, 0.95) 0%, rgba(26, 31, 22, 0) 100%);
+  background: linear-gradient(180deg, rgba(0, 8, 20, 0.95) 0%, rgba(0, 8, 20, 0) 100%);
   backdrop-filter: blur(10px);
 }
 
