@@ -31,6 +31,36 @@ api_router = APIRouter(prefix="/api")
 
 
 # Define Models
+class MonobankInfo(BaseModel):
+    link: str
+    cardNumber: str
+    iban: str
+
+class CryptoInfo(BaseModel):
+    usdt_trc20: str
+
+class SocialInfo(BaseModel):
+    instagram: str
+    facebook: str
+
+class FundraisingData(BaseModel):
+    totalRaised: float
+    goalAmount: float
+    donorCount: int
+    monobank: MonobankInfo
+    crypto: CryptoInfo
+    social: SocialInfo
+    updatedAt: Optional[datetime] = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class FundraisingUpdate(BaseModel):
+    adminPassword: str
+    totalRaised: float
+    goalAmount: float
+    donorCount: int
+    monobank: MonobankInfo
+    crypto: CryptoInfo
+    social: SocialInfo
+
 class StatusCheck(BaseModel):
     model_config = ConfigDict(extra="ignore")  # Ignore MongoDB's _id field
     
@@ -40,6 +70,33 @@ class StatusCheck(BaseModel):
 
 class StatusCheckCreate(BaseModel):
     client_name: str
+
+
+# Initialize database with default data
+async def init_fundraising_data():
+    existing = await db.fundraising_data.find_one()
+    if not existing:
+        default_data = {
+            "totalRaised": 125000,
+            "goalAmount": 500000,
+            "donorCount": 347,
+            "monobank": {
+                "link": "https://send.monobank.ua/jar/4g2vud36xP",
+                "cardNumber": "5375 4141 0123 4567",
+                "iban": "UA123456789012345678901234567"
+            },
+            "crypto": {
+                "usdt_trc20": "TXqwertyuiopasdfghjklzxcvbnm123456"
+            },
+            "social": {
+                "instagram": "https://instagram.com/unit406",
+                "facebook": "https://facebook.com/unit406"
+            },
+            "updatedAt": datetime.now(timezone.utc),
+            "createdAt": datetime.now(timezone.utc)
+        }
+        await db.fundraising_data.insert_one(default_data)
+        logger.info("Initialized default fundraising data")
 
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
