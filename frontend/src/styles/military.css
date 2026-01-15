@@ -175,6 +175,19 @@ body {
 
 .hero-title {
   font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: var(--text-light);
+  text-shadow: 0 2px 20px rgba(0, 180, 216, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-family: 'UAF Sans', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
 /* Loading and Error Screens */
 .loading-screen,
@@ -198,20 +211,6 @@ body {
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
-
-  font-weight: 900;
-  margin: 0 0 1rem;
-  color: var(--text-light);
-  text-shadow: 0 2px 20px rgba(0, 180, 216, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 2px;
-  text-transform: uppercase;
 }
 
 .inline-icon {
