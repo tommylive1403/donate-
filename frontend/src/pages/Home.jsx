@@ -154,10 +154,18 @@ export const Home = () => {
               <div className="payment-details">
                 <div className="detail-item">
                   <label>Посилання</label>
-                  <div className="detail-value clickable" onClick={() => window.open(data.monobank.link, '_blank')}>
-                    <span className="link-text">Перейти до банки</span>
-                    <Share2 className="icon" />
-                  </div>
+                  <a 
+                    href={data.monobank.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bank-link-button"
+                  >
+                    <svg className="bank-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M2 9V15H4V22H6V15H8V22H10V15H12V9H2M13 9V22H15V16H17V22H19V16H21V9H13M22 3H2V7H22V3Z"/>
+                    </svg>
+                    <span className="bank-link-text">Перейти до банки</span>
+                    <Share2 className="arrow-icon" />
+                  </a>
                 </div>
                 <div className="detail-item">
                   <label>Номер картки</label>
