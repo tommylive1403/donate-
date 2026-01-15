@@ -285,7 +285,7 @@ body {
 
 .currency {
   font-size: 2.5rem;
-  color: var(--ua-yellow);
+  color: var(--accent-cyan);
   font-weight: 600;
 }
 
