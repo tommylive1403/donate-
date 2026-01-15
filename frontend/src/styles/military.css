@@ -366,8 +366,8 @@ body {
 
 .donation-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(107, 142, 35, 0.2);
-  border-color: var(--accent-green);
+  box-shadow: 0 12px 40px rgba(0, 180, 216, 0.3);
+  border-color: var(--accent-cyan);
 }
 
 .card-title {
