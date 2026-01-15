@@ -465,7 +465,7 @@ body {
 
 .copy-badge {
   font-size: 0.85rem;
-  color: var(--ua-yellow);
+  color: var(--accent-cyan);
   font-weight: 600;
   white-space: nowrap;
   font-family: 'Rajdhani', sans-serif;
