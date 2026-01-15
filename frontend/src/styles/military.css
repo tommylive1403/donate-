@@ -458,6 +458,72 @@ body {
   display: block;
 }
 
+
+/* Bank Link Button */
+.bank-link-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.25rem 2rem;
+  background: linear-gradient(135deg, var(--ua-blue) 0%, var(--accent-cyan) 100%);
+  border: 2px solid var(--accent-cyan);
+  border-radius: 12px;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 180, 216, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.bank-link-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.bank-link-button:hover::before {
+  left: 100%;
+}
+
+.bank-link-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 180, 216, 0.6);
+  border-color: var(--text-light);
+}
+
+.bank-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--text-light);
+}
+
+.bank-link-text {
+  flex: 1;
+  text-align: center;
+  font-family: 'UAF Sans', sans-serif;
+  letter-spacing: 1px;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-light);
+  transition: transform 0.3s ease;
+}
+
+.bank-link-button:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
 .qr-hint {
   text-align: center;
   color: var(--text-muted);
