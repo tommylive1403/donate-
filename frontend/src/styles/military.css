@@ -598,7 +598,7 @@ body {
   color: var(--accent-cyan);
   margin: 0 0 0.5rem;
   text-shadow: 0 2px 8px rgba(0, 180, 216, 0.5);
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'UAF Sans', sans-serif;
 }
 
 .footer-subtext {
