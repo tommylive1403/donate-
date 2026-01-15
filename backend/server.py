@@ -103,6 +103,47 @@ async def init_fundraising_data():
 async def root():
     return {"message": "Hello World"}
 
+@api_router.get("/fundraising", response_model=FundraisingData)
+async def get_fundraising_data():
+    """Get current fundraising data (public endpoint)"""
+    data = await db.fundraising_data.find_one()
+    if not data:
+        raise HTTPException(status_code=404, detail="Fundraising data not found")
+    
+    # Remove MongoDB _id field
+    data.pop('_id', None)
+    data.pop('createdAt', None)
+    
+    return FundraisingData(**data)
+
+@api_router.put("/fundraising")
+async def update_fundraising_data(update: FundraisingUpdate):
+    """Update fundraising data (admin only)"""
+    # Verify admin password
+    admin_password = os.environ.get('ADMIN_PASSWORD', 'admin123')
+    if update.adminPassword != admin_password:
+        raise HTTPException(status_code=401, detail="Invalid admin password")
+    
+    # Prepare update data
+    update_dict = update.model_dump()
+    update_dict.pop('adminPassword')
+    update_dict['updatedAt'] = datetime.now(timezone.utc)
+    
+    # Update in database
+    result = await db.fundraising_data.update_one(
+        {},
+        {"$set": update_dict}
+    )
+    
+    if result.modified_count == 0:
+        raise HTTPException(status_code=500, detail="Failed to update data")
+    
+    return {
+        "success": True,
+        "message": "Дані успішно оновлено",
+        "data": update_dict
+    }
+
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
     status_dict = input.model_dump()
