@@ -1,17 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
 
 :root {
-  --military-olive: #3d4a2c;
-  --military-dark: #1a1f16;
-  --military-khaki: #8b8a7a;
-  --military-camo: #4a5240;
+  --bg-dark: #000814;
+  --bg-navy: #001d3d;
+  --bg-blue: #003566;
   --ua-blue: #0057b7;
   --ua-yellow: #ffd700;
-  --accent-green: #6b8e23;
-  --text-light: #e8e6e1;
-  --text-muted: #a8a695;
-  --card-bg: rgba(26, 31, 22, 0.85);
-  --border-color: rgba(139, 138, 122, 0.3);
+  --accent-cyan: #00b4d8;
+  --text-light: #f8f9fa;
+  --text-muted: #adb5bd;
+  --card-bg: rgba(0, 29, 61, 0.7);
+  --border-color: rgba(0, 180, 216, 0.3);
 }
 
 * {
