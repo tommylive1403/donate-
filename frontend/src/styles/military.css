@@ -228,8 +228,8 @@ body {
 
 .progress-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 87, 183, 0.2);
-  border-color: var(--ua-blue);
+  box-shadow: 0 12px 40px rgba(0, 180, 216, 0.3);
+  border-color: var(--accent-cyan);
 }
 
 .progress-header {
