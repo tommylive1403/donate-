@@ -192,9 +192,10 @@ body {
   text-align: center;
   color: var(--text-light);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   position: relative;
   padding-bottom: 1rem;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .section-title::after {
@@ -205,8 +206,9 @@ body {
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background: linear-gradient(90deg, var(--ua-blue), var(--ua-yellow));
+  background: linear-gradient(90deg, var(--accent-cyan), var(--ua-blue));
   border-radius: 2px;
+  box-shadow: 0 0 10px var(--accent-cyan);
 }
 
 /* Progress Section */
