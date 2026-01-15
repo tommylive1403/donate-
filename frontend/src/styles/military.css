@@ -330,7 +330,7 @@ body {
   font-size: 4rem;
   font-weight: 700;
   color: var(--accent-cyan);
-  font-family: 'Orbitron', monospace;
+  font-family: 'UAF Sans', sans-serif;
   text-shadow: 0 0 20px rgba(0, 180, 216, 0.6);
 }
 
