@@ -165,8 +165,8 @@ body {
 .inline-icon {
   width: 3rem;
   height: 3rem;
-  color: var(--ua-yellow);
-  filter: drop-shadow(0 0 8px var(--ua-yellow));
+  color: var(--accent-cyan);
+  filter: drop-shadow(0 0 10px var(--accent-cyan));
 }
 
 .hero-subtitle {
