@@ -473,6 +473,13 @@ body {
   display: block;
 }
 
+.qr-code-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
 
 /* Bank Link Button */
 .bank-link-button {
