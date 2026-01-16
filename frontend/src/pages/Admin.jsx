@@ -260,6 +260,17 @@ export const Admin = () => {
                 required
               />
             </div>
+            <div className="form-group">
+              <label>Telegram</label>
+              <input
+                type="url"
+                name="social.telegram"
+                value={formData.social.telegram || ''}
+                onChange={handleChange}
+                placeholder="https://t.me/..."
+              />
+            </div>
+
           </div>
 
           <button type="submit" className="submit-button" disabled={saving}>
