@@ -134,20 +134,18 @@ export const Home = () => {
           <h2 className="section-title">Способи допомоги</h2>
           
           <div className="donation-grid">
-            {/* QR Code Card with Monobank Widget */}
+            {/* QR Code Card */}
             <div className="donation-card qr-card">
               <h3 className="card-title">Швидкий донат</h3>
-              <div className="monobank-widget-wrapper">
-                <iframe 
-                  src="https://send.monobank.ua/widget.html?jar=4sg9gk5ffKvUB5VdpZ1LAMwTcX5E4Chh&sendId=9cZr3tKqrK&type=qrp&colorScheme=black"
-                  width="100%"
-                  height="450"
-                  frameBorder="0"
-                  className="monobank-widget"
-                  title="Monobank QR Widget"
-                  allow="payment"
-                ></iframe>
+              <div className="qr-wrapper">
+                <QRCode 
+                  value={data.monobank.link}
+                  size={200}
+                  level="H"
+                  className="qr-code"
+                />
               </div>
+              <p className="qr-hint">Скануй QR-код для швидкої оплати</p>
             </div>
 
             {/* Monobank Card */}
