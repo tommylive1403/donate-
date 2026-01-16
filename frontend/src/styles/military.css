@@ -456,6 +456,19 @@ body {
   border-radius: 12px;
 }
 
+.monobank-widget-wrapper {
+  margin: 1rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.monobank-widget {
+  display: block;
+  border: none;
+  border-radius: 12px;
+}
+
 .qr-code {
   display: block;
 }
