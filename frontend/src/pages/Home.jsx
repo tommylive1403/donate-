@@ -138,7 +138,7 @@ export const Home = () => {
               <h3 className="card-title">Швидкий донат</h3>
               <div className="qr-wrapper">
                 <img 
-                  src="/images/qr-code.jpeg"
+                  src="/images/qr-code.png"
                   alt="QR-код для донату"
                   className="qr-code-image"
                 />
