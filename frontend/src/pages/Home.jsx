@@ -85,13 +85,13 @@ export const Home = () => {
       {/* Hero Section */}
       <section className="">
         <div className="hero-content">
-          <h1 className="hero-title">
+          <h1 className="hero-title !font-bold !text-xl !leading-[1.7rem] !text-center">
             <svg className="marine-anchor-icon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C10.89 2 10 2.89 10 4C10 4.74 10.4 5.38 11 5.73V7H10C9.45 7 9 7.45 9 8C9 8.55 9.45 9 10 9H11V10.82C8.16 11.4 6 13.92 6 17V20C6 20.55 6.45 21 7 21H8C8.55 21 9 20.55 9 20V18H10V20C10 20.55 10.45 21 11 21H13C13.55 21 14 20.55 14 20V18H15V20C15 20.55 15.45 21 16 21H17C17.55 21 18 20.55 18 20V17C18 13.92 15.84 11.4 13 10.82V9H14C14.55 9 15 8.55 15 8C15 7.45 14.55 7 14 7H13V5.73C13.6 5.38 14 4.74 14 4C14 2.89 13.11 2 12 2M12 4C12.28 4 12.5 4.22 12.5 4.5C12.5 4.78 12.28 5 12 5C11.72 5 11.5 4.78 11.5 4.5C11.5 4.22 11.72 4 12 4M12 12C14.21 12 16 13.79 16 16V16H8V16C8 13.79 9.79 12 12 12Z" />
             </svg>
             Підтримай захисників України
           </h1>
-          <p className="hero-subtitle">
+          <p className="hero-subtitle !font-medium !text-xl !text-center !text-[#F2F1F1]">
             Збір коштів на критичне обладнання для підрозділу
           </p>
         </div>
