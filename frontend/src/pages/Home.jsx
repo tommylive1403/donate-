@@ -229,8 +229,11 @@ export const Home = () => {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <p className="footer-text">Разом до перемоги! 🇺🇦</p>
-          <p className="footer-subtext">Кожна гривня наближає нашу перемогу</p>
+          <img 
+            src="/images/footer-logo.png" 
+            alt="Собаки Шукаки" 
+            className="footer-logo"
+          />
         </div>
       </footer>
     </div>);
