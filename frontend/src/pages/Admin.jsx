@@ -27,7 +27,8 @@ export const Admin = () => {
     },
     social: {
       instagram: '',
-      facebook: ''
+      facebook: '',
+      telegram: ''
     }
   });
 
