@@ -42,6 +42,7 @@ class CryptoInfo(BaseModel):
 class SocialInfo(BaseModel):
     instagram: str
     facebook: str
+    telegram: Optional[str] = ""
 
 class FundraisingData(BaseModel):
     totalRaised: float
