@@ -679,6 +679,15 @@ body {
   box-shadow: 0 8px 24px rgba(24, 119, 242, 0.3);
 }
 
+.social-link.telegram {
+  border-color: #0088cc;
+}
+
+.social-link.telegram:hover {
+  border-color: #0088cc;
+  box-shadow: 0 8px 24px rgba(0, 136, 204, 0.3);
+}
+
 .social-icon {
   width: 24px;
   height: 24px;
