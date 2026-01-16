@@ -137,11 +137,10 @@ export const Home = () => {
             <div className="donation-card qr-card">
               <h3 className="card-title">Швидкий донат</h3>
               <div className="qr-wrapper">
-                <QRCode 
-                  value={data.monobank.link}
-                  size={200}
-                  level="H"
-                  className="qr-code"
+                <img 
+                  src="/images/qr-code.jpeg"
+                  alt="QR-код для донату"
+                  className="qr-code-image"
                 />
               </div>
               <p className="qr-hint">Скануй QR-код для швидкої оплати</p>
