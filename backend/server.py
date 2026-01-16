@@ -121,7 +121,9 @@ async def get_fundraising_data():
 async def update_fundraising_data(update: FundraisingUpdate):
     """Update fundraising data (admin only)"""
     # Verify admin password
-    admin_password = os.environ.get('ADMIN_PASSWORD', 'admin123')
+    admin_password = os.environ.get('ADMIN_PASSWORD')
+    if not admin_password:
+        raise HTTPException(status_code=500, detail="Admin password not configured")
     if update.adminPassword != admin_password:
         raise HTTPException(status_code=401, detail="Invalid admin password")
     
