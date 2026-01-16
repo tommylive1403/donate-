@@ -413,9 +413,11 @@ body {
 }
 
 .donation-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .donation-card {
