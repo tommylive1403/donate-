@@ -712,6 +712,14 @@ body {
   font-family: 'UAF Sans', sans-serif;
 }
 
+.footer-logo {
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+}
+
 .footer-subtext {
   font-size: 1rem;
   color: var(--text-muted);
