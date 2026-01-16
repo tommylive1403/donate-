@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Share2, Loader2 } from 'lucide-react';
+import QRCode from 'react-qr-code';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
