@@ -717,10 +717,6 @@ body {
     gap: 1.5rem;
   }
   
-  .donation-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .progress-card {
     padding: 1.5rem;
   }
@@ -728,5 +724,9 @@ body {
   .bank-link-button {
     padding: 1rem 1.5rem;
     font-size: 1rem;
+  }
+
+  .donation-grid {
+    max-width: 100%;
   }
 }
