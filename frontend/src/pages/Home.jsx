@@ -88,10 +88,10 @@ export const Home = () => {
             <svg className="marine-anchor-icon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C10.89 2 10 2.89 10 4C10 4.74 10.4 5.38 11 5.73V7H10C9.45 7 9 7.45 9 8C9 8.55 9.45 9 10 9H11V10.82C8.16 11.4 6 13.92 6 17V20C6 20.55 6.45 21 7 21H8C8.55 21 9 20.55 9 20V18H10V20C10 20.55 10.45 21 11 21H13C13.55 21 14 20.55 14 20V18H15V20C15 20.55 15.45 21 16 21H17C17.55 21 18 20.55 18 20V17C18 13.92 15.84 11.4 13 10.82V9H14C14.55 9 15 8.55 15 8C15 7.45 14.55 7 14 7H13V5.73C13.6 5.38 14 4.74 14 4C14 2.89 13.11 2 12 2M12 4C12.28 4 12.5 4.22 12.5 4.5C12.5 4.78 12.28 5 12 5C11.72 5 11.5 4.78 11.5 4.5C11.5 4.22 11.72 4 12 4M12 12C14.21 12 16 13.79 16 16V16H8V16C8 13.79 9.79 12 12 12Z" />
             </svg>
-            Підтримай захисників України
+            "Т-700 Логіст"
           </h1>
-          <p className="hero-subtitle">
-            Збір коштів на критичне обладнання для підрозділу
+          <p className="hero-subtitle">Збір на бойовий важкий наземний роботизований комплекс "Т-700 Логіст" на потребу 406 ОАБр
+
           </p>
         </div>
       </section>
@@ -102,7 +102,7 @@ export const Home = () => {
         <section className="progress-section">
           <div className="progress-card">
             <div className="progress-header">
-              <h2 className="section-title">Прогрес збору</h2>
+              <h2 className="section-title !font-semibold !text-center">Прогрес збору</h2>
               <div className="donor-count">
                 <Heart className="heart-icon" />
                 <span>{data.donorCount} донорів</span>
@@ -111,10 +111,10 @@ export const Home = () => {
             
             <div className="amount-display">
               <div className="current-amount">
-                <span className="amount-value">{formatAmount(data.totalRaised)}</span>
+                <span className="amount-value !font-bold !text-7xl !text-center !text-[#FFFFFF]">{formatAmount(data.totalRaised)}</span>
                 <span className="currency">₴</span>
               </div>
-              <div className="goal-amount">
+              <div className="goal-amount !font-semibold !text-lg">
                 Мета: {formatAmount(data.goalAmount)} ₴
               </div>
             </div>
@@ -130,28 +130,28 @@ export const Home = () => {
 
         {/* Donation Methods */}
         <section className="donation-section">
-          <h2 className="section-title">Способи допомоги</h2>
+          <h2 className=""></h2>
           
           <div className="donation-grid">
             {/* QR Code Card */}
             <div className="donation-card qr-card">
-              <h3 className="card-title">Швидкий донат</h3>
+              <h3 className=""></h3>
               <div className="qr-wrapper">
-                <img 
+                <img
                   src="/images/qr-code.png"
                   alt="QR-код для донату"
-                  className="qr-code-image"
-                />
+                  className="qr-code-image !my-[-88px] !rounded-[-1px]" />
+
               </div>
               <p className="qr-hint">Скануй QR-код для швидкої оплати</p>
             </div>
 
             {/* Monobank Card */}
             <div className="donation-card">
-              <h3 className="card-title">Monobank</h3>
+              <h3 className=""></h3>
               <div className="payment-details">
                 <div className="detail-item">
-                  <label>Посилання</label>
+                  <label className="!font-semibold !text-lg !text-center !text-[#FFFFFF]">Посилання</label>
                   <a
                     href={data.monobank.link}
                     target="_blank"
@@ -161,22 +161,22 @@ export const Home = () => {
                     <svg className="bank-icon" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M2 9V15H4V22H6V15H8V22H10V15H12V9H2M13 9V22H15V16H17V22H19V16H21V9H13M22 3H2V7H22V3Z" />
                     </svg>
-                    <span className="bank-link-text">Перейти до банки</span>
+                    <span className="bank-link-text !font-medium !text-3xl">Перейти до банки</span>
                     <Share2 className="arrow-icon" />
                   </a>
                 </div>
                 <div className="detail-item">
-                  <label>Номер картки</label>
+                  <label className="!font-semibold !text-lg !text-center !text-[#FFFFFF]">Номер картки</label>
                   <div className="detail-value clickable" onClick={() => copyToClipboard(data.monobank.cardNumber, 'card')}>
                     <span className="mono-font">{data.monobank.cardNumber}</span>
-                    <span className="copy-badge">{copiedField === 'card' ? '✓' : 'Копіювати'}</span>
+                    <span className="copy-badge !font-semibold !text-sm !text-right !text-[#FFFFFF]">{copiedField === 'card' ? '✓' : 'Копіювати'}</span>
                   </div>
                 </div>
                 <div className="detail-item">
-                  <label>IBAN</label>
+                  <label className="!font-medium !text-lg !text-center !text-[#FFFFFF]">IBAN</label>
                   <div className="detail-value clickable" onClick={() => copyToClipboard(data.monobank.iban, 'iban')}>
                     <span className="mono-font">{data.monobank.iban}</span>
-                    <span className="copy-badge">{copiedField === 'iban' ? '✓' : 'Копіювати'}</span>
+                    <span className="copy-badge !font-semibold !text-sm !text-right !text-[#FFFFFF]">{copiedField === 'iban' ? '✓' : 'Копіювати'}</span>
                   </div>
                 </div>
               </div>
@@ -184,13 +184,13 @@ export const Home = () => {
 
             {/* Crypto Card */}
             <div className="donation-card">
-              <h3 className="card-title">Криптовалюта</h3>
+              <h3 className="card-title !font-semibold !text-xl !text-center !text-[#FFFFFF]">Крипто</h3>
               <div className="payment-details">
                 <div className="detail-item">
-                  <label>USDT (TRC-20)</label>
+                  <label className="!font-medium !text-base !text-left !text-[#FFFFFF]">USDT (TRC-20)</label>
                   <div className="detail-value clickable" onClick={() => copyToClipboard(data.crypto.usdt_trc20, 'crypto')}>
                     <span className="mono-font crypto-address">{data.crypto.usdt_trc20}</span>
-                    <span className="copy-badge">{copiedField === 'crypto' ? '✓' : 'Копіювати'}</span>
+                    <span className="copy-badge !font-semibold !text-sm !text-right !text-[#FFFFFF]">{copiedField === 'crypto' ? '✓' : 'Копіювати'}</span>
                   </div>
                 </div>
               </div>
