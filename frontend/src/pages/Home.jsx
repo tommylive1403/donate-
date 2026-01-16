@@ -138,12 +138,13 @@ export const Home = () => {
               <h3 className="card-title">Швидкий донат</h3>
               <div className="monobank-widget-wrapper">
                 <iframe 
-                  src={`https://send.monobank.ua/widget.html?jar=4sg9gk5ffKvUB5VdpZ1LAMwTcX5E4Chh&sendId=9cZr3tKqrK&type=qrp&colorScheme=black`}
+                  src="https://send.monobank.ua/widget.html?jar=4sg9gk5ffKvUB5VdpZ1LAMwTcX5E4Chh&sendId=9cZr3tKqrK&type=qrp&colorScheme=black"
                   width="100%"
                   height="450"
                   frameBorder="0"
                   className="monobank-widget"
                   title="Monobank QR Widget"
+                  allow="payment"
                 ></iframe>
               </div>
             </div>
