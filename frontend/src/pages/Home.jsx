@@ -29,6 +29,29 @@ export const Home = () => {
     navigator.clipboard.writeText(text);
     setCopiedField(field);
     setTimeout(() => setCopiedField(null), 2000);
+    
+    // Track copy events
+    if (window.fbq) {
+      window.fbq('track', 'Contact', { content_name: field });
+    }
+    if (window.ttq) {
+      window.ttq.track('ClickButton', { content_type: field });
+    }
+  };
+
+  const handleBankLinkClick = () => {
+    // Track donation button clicks
+    if (window.fbq) {
+      window.fbq('track', 'InitiateCheckout', { 
+        content_name: 'Monobank Donation',
+        currency: 'UAH'
+      });
+    }
+    if (window.ttq) {
+      window.ttq.track('ClickButton', { 
+        content_type: 'donation_link'
+      });
+    }
   };
 
   const formatAmount = (amount) => {
